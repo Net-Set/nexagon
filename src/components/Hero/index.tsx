@@ -3,6 +3,8 @@ import React from 'react';
 const Hero: React.FC = () => {
   const heroTitle = import.meta.env.VITE_APP_HERO_TITLE || "";
   const heroSubtitle = import.meta.env.VITE_APP_HERO_DESCRIPTION || "";
+  const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "#007bff";
+  const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "#ffffff";
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -17,12 +19,10 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="hero-actions">
-              <button className="hero-btn primary">
-                <span className="btn-icon">🚀</span>
+              <button className="hero-btn" style={{backgroundColor: buttonBgColor, color: buttonTextColor}}>
                 Start Investing
               </button>
-              <button className="hero-btn secondary">
-                <span className="btn-icon">📊</span>
+              <button className="hero-btn" style={{backgroundColor: buttonBgColor, color: buttonTextColor}}>
                 Presentation
               </button>
             </div>

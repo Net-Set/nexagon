@@ -191,17 +191,6 @@ body {
   transition: all 0.2s ease;
 }
 
-.hero-btn.primary {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-  color: white;
-}
-
-.hero-btn.secondary {
-  background: transparent;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
 /* Contract Stats Card */
 .contract-stats-card {
   background: rgba(30, 32, 54, 0.8);
@@ -477,10 +466,6 @@ section:not(.hero-section) {
   transition: all 0.3s ease;
 }
 
-.primary-btn {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-  color: white;
-}
 
 .secondary-btn {
   background: rgba(255, 255, 255, 0.1);
@@ -863,9 +848,7 @@ section:not(.hero-section) {
 
 .withdraw-btn,
 .withdraw-leadership-btn {
-  background: linear-gradient(135deg, #10b981, #059669);
   border: none;
-  color: white;
   padding: 1rem 2rem;
   border-radius: 12px;
   cursor: pointer;

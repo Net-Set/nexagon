@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 const ReferralProgram: React.FC = () => {
   const [referralLink] = useState('https://hexagon.world/ref?refId=CZrs4ICvkm0207');
   const [copied, setCopied] = useState(false);
-
+  const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "";
+  const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "";
   const copyToClipboard = () => {
     navigator.clipboard.writeText(referralLink);
     setCopied(true);
@@ -86,8 +87,8 @@ const ReferralProgram: React.FC = () => {
           <div className="referral-section">
             {/* Withdraw Button */}
             <div className="referral-actions">
-              <button className="withdraw-btn">
-                💸 Withdraw Referral
+              <button className="withdraw-btn" style={{backgroundColor: buttonBgColor, color: buttonTextColor}}>
+                Withdraw Referral
               </button>
             </div>
           </div>

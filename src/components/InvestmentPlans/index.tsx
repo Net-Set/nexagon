@@ -10,6 +10,8 @@ interface InvestmentPlan {
 }
 
 const InvestmentPlans: React.FC = () => {
+  const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "";
+  const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "";
   const plans: InvestmentPlan[] = [
     {
       name: "Starter Plan",
@@ -82,7 +84,7 @@ const InvestmentPlans: React.FC = () => {
               
               <div className="plan-footer">
                 <div className="plan-returns">100% Capital Returns</div>
-                <button className="select-plan-btn">
+                <button className="select-plan-btn" style={{backgroundColor: buttonBgColor, color: buttonTextColor}}>
                   Select Plan
                 </button>
               </div>

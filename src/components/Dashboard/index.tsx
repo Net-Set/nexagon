@@ -2,6 +2,8 @@ import React from 'react';
 
 
 const Dashboard: React.FC = () => {
+  const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "";
+  const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "";
   return (
     <section className="dashboard-section">
       <div className="dashboard-container">
@@ -32,10 +34,10 @@ const Dashboard: React.FC = () => {
             </div>
 
             <div className="dashboard-actions">
-              <button className="action-btn primary-btn">
+              <button className="action-btn primary-btn" style={{backgroundColor: buttonBgColor, color: buttonTextColor}}>
                 Deposit
               </button>
-              <button className="action-btn secondary-btn">
+              <button className="action-btn secondary-btn" style={{backgroundColor: buttonBgColor, color: buttonTextColor}}>
                 Withdraw
               </button>
             </div>
@@ -49,7 +51,7 @@ const Dashboard: React.FC = () => {
                 <div className="status-info">
                   <h4>No Active Investments</h4>
                   <p>Start your first investment to begin earning daily returns</p>
-                  <button className="start-investing-btn">
+                  <button className="start-investing-btn" style={{backgroundColor: buttonBgColor, color: buttonTextColor}}>
                     <span className="btn-icon">🚀</span>
                     Start Investing
                   </button>

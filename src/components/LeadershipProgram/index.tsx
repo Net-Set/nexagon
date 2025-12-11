@@ -7,6 +7,8 @@ interface LeadershipLevel {
 }
 
 const LeadershipProgram: React.FC = () => {
+  const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "";
+  const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "";
   const leadershipLevels: LeadershipLevel[] = [
     {
       name: 'Leader',
@@ -66,7 +68,7 @@ const LeadershipProgram: React.FC = () => {
           {/* Withdraw Button */}
           <div className="leadership-actions-section">
             <div className="leadership-actions">
-              <button className="withdraw-leadership-btn">
+              <button className="withdraw-leadership-btn" style={{backgroundColor: buttonBgColor, color: buttonTextColor}}>
               Withdraw Leadership
               </button>
             </div>
