@@ -1,0 +1,142 @@
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.border-gradient {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-image: linear-gradient(90deg, #ffc107, #ff5722);
+  border-image-slice: 1;
+}
+
+.card,
+.btn-animate {
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(167, 166, 165, 0.5);
+}
+
+.btn-animate:hover {
+  transform: translateY(-5px);
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 10px rgba(167, 166, 165, 0.3);
+}
+
+.border-gradient {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-image: linear-gradient(90deg, #ffc107, #ff5722);
+  border-image-slice: 1;
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.3);
+}
+.animated-image {
+  animation: upDown 2s infinite alternate ease-in-out;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.border-gradient {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-image: linear-gradient(90deg, #ffc107, #ff5722);
+  border-image-slice: 1;
+}
+
+.card,
+.btn-animate {
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(167, 166, 165, 0.5);
+}
+
+.btn-animate:hover {
+  transform: translateY(-5px);
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 10px rgba(167, 166, 165, 0.3);
+}
+
+.border-gradient {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-image: linear-gradient(90deg, #ffc107, #ff5722);
+  border-image-slice: 1;
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.3);
+}
+.animated-image {
+  animation: upDown 2s infinite alternate ease-in-out;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+body {
+  .btn:hover {
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.wui-flex {
+  align-items: center !important;
+  z-index: 9999;
+}
+
+:root {
+  .wui-flex {
+    align-items: center !important;
+  }
+}
+.w3m-header {
+  margin-top: 50px;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
