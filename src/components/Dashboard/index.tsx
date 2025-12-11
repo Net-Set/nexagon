@@ -33,12 +33,10 @@ const Dashboard: React.FC = () => {
 
             <div className="dashboard-actions">
               <button className="action-btn primary-btn">
-                <span className="btn-icon">📈</span>
-                Start Investing
+                Deposit
               </button>
               <button className="action-btn secondary-btn">
-                <span className="btn-icon">💸</span>
-                Withdraw 50%
+                Withdraw
               </button>
             </div>
           </div>

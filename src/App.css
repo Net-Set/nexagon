@@ -21,15 +21,6 @@ body {
     border-color 0.3s ease-in-out;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(167, 166, 165, 0.5);
-}
-
-.btn-animate:hover {
-  transform: translateY(-5px);
-}
-
 .shadow-lg {
   box-shadow: 0 4px 10px rgba(167, 166, 165, 0.3);
 }
@@ -80,14 +71,6 @@ body {
     border-color 0.3s ease-in-out;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(167, 166, 165, 0.5);
-}
-
-.btn-animate:hover {
-  transform: translateY(-5px);
-}
 
 .shadow-lg {
   box-shadow: 0 4px 10px rgba(167, 166, 165, 0.3);
@@ -116,12 +99,6 @@ body {
   }
 }
 
-body {
-  .btn:hover {
-    transform: scale(1.05);
-    transition: all 0.5s ease-in-out;
-  }
-}
 
 .wui-flex {
   align-items: center !important;

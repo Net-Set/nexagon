@@ -89,11 +89,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.nav-item:hover {
-  background: rgba(139, 92, 246, 0.1);
-  color: #8b5cf6;
-}
-
 .nav-auth-btn {
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
   border: none;
@@ -104,11 +99,6 @@ body {
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.nav-auth-btn:hover {
-  transform: translateY(-2px);
 }
 
 /* Hero Section Styles - Modern Layout */
@@ -210,10 +200,6 @@ body {
   background: transparent;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hero-btn:hover {
-  opacity: 0.9;
 }
 
 /* Contract Stats Card */
@@ -434,13 +420,6 @@ section:not(.hero-section) {
   border-radius: 20px;
   padding: 2rem;
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.dashboard-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
 }
 
 .balance-cards {
@@ -460,11 +439,6 @@ section:not(.hero-section) {
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.balance-card:hover {
-  transform: translateY(-5px);
 }
 
 .balance-icon {
@@ -514,10 +488,6 @@ section:not(.hero-section) {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.action-btn:hover {
-  transform: translateY(-2px);
-}
-
 .investment-status {
   margin-top: 2rem;
   flex: 1;
@@ -556,11 +526,6 @@ section:not(.hero-section) {
   gap: 0.5rem;
   cursor: pointer;
   margin-top: 1rem;
-  transition: transform 0.2s ease;
-}
-
-.start-investing-btn:hover {
-  transform: translateY(-2px);
 }
 
 /* Investment Plans Styles */
@@ -593,12 +558,7 @@ section:not(.hero-section) {
   padding: 2rem;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
   text-align: center;
-}
-
-.plan-card:hover {
-  transform: translateY(-10px);
 }
 
 .plan-card.popular {
@@ -677,24 +637,194 @@ section:not(.hero-section) {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  transition: transform 0.2s ease;
-}
-
-.select-plan-btn:hover {
-  transform: translateY(-2px);
 }
 
 /* Referral Program Styles */
+.referral-stats-grid,
 .referral-stats,
 .leadership-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   margin-bottom: 2rem;
   justify-content: center;
-  max-width: 900px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 0.5rem;
+}
+
+/* Medium screens - tablet portrait */
+@media (min-width: 641px) and (max-width: 768px) {
+  .referral-stats-grid,
+  .referral-stats,
+  .leadership-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 1rem;
+    max-width: 600px;
+  }
+  
+  .stat-card,
+  .leadership-stat-card {
+    padding: 1.5rem 1.25rem;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 769px) {
+  .referral-stats-grid,
+  .referral-stats,
+  .leadership-stats {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .stat-card,
+  .leadership-stat-card {
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+  }
+}
+
+/* Desktop screens */
+@media (min-width: 1024px) {
+  .referral-stats-grid,
+  .referral-stats,
+  .leadership-stats {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 640px) {
+  .referral-stats-grid,
+  .referral-stats,
+  .leadership-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .stat-card,
+  .leadership-stat-card {
+    padding: 1.25rem 1rem;
+    min-height: auto;
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+  
+  .stat-info {
+    flex: 1;
+  }
+  
+  .stat-amount {
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .referral-stats-grid,
+  .referral-stats,
+  .leadership-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0 0.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .leadership-container {
+    padding: 2rem 0.5rem;
+  }
+  
+  .leadership-header {
+    margin-bottom: 2rem;
+  }
+  
+  .leadership-title {
+    font-size: 1.75rem;
+  }
+  
+  .leadership-subtitle {
+    font-size: 1rem;
+  }
+  
+  .levels-grid {
+    padding: 0 0.25rem;
+    align-items: center;
+  }
+  
+  .levels-grid .leadership-level-card {
+    max-width: 300px;
+  }
+  
+  .leadership-level-card {
+    padding: 1.25rem 1rem;
+  }
+  
+  .level-name {
+    font-size: 1.1rem;
+  }
+  
+  .level-percentage {
+    font-size: 1.2rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .withdraw-leadership-btn {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .stat-card,
+  .leadership-stat-card {
+    padding: 1rem 0.75rem;
+    min-height: 80px;
+    border-radius: 12px;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .stat-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+  }
+  
+  .stat-info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .stat-amount {
+    font-size: 1.1rem;
+    margin-bottom: 0.125rem;
+    word-break: break-all;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+    line-height: 1.1;
+    opacity: 0.9;
+  }
 }
 
 .stat-card,
@@ -706,6 +836,8 @@ section:not(.hero-section) {
   align-items: center;
   gap: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  min-height: 120px;
 }
 
 .stat-icon {
@@ -739,12 +871,6 @@ section:not(.hero-section) {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  transition: transform 0.2s ease;
-}
-
-.withdraw-btn:hover,
-.withdraw-leadership-btn:hover {
-  transform: translateY(-2px);
 }
 
 .referral-link-section {
@@ -813,11 +939,6 @@ section:not(.hero-section) {
   padding: 0.75rem;
   cursor: pointer;
   font-size: 1.2rem;
-  transition: transform 0.2s ease;
-}
-
-.social-btn:hover {
-  transform: translateY(-2px);
 }
 
 .commission-levels {
@@ -846,11 +967,6 @@ section:not(.hero-section) {
   padding: 1.5rem;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.commission-card:hover {
-  transform: translateY(-5px);
 }
 
 .commission-level {
@@ -872,8 +988,16 @@ section:not(.hero-section) {
 }
 
 /* Leadership Program Styles */
+.leadership-stats-section,
+.leadership-actions-section,
+.leadership-levels-section {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
 .leadership-levels {
-  margin-top: 3rem;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .levels-title {
@@ -885,18 +1009,21 @@ section:not(.hero-section) {
 
 .levels-grid {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
   justify-content: center;
-  max-width: 900px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 1rem;
 }
 
 .levels-grid .leadership-level-card {
   flex: 1;
-  min-width: 250px;
-  max-width: 280px;
+  min-width: 280px;
+  max-width: 320px;
 }
 
 .leadership-level-card {
@@ -904,11 +1031,9 @@ section:not(.hero-section) {
   border-radius: 16px;
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.leadership-level-card:hover {
-  transform: translateY(-5px);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
 }
 
 .level-header {
@@ -916,17 +1041,24 @@ section:not(.hero-section) {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .level-name {
   font-size: 1.3rem;
   font-weight: 700;
+  color: #ffffff;
 }
 
 .level-percentage {
   font-size: 1.5rem;
   font-weight: 800;
   color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
 }
 
 .level-description {
@@ -983,11 +1115,6 @@ section:not(.hero-section) {
   margin-bottom: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-  background: rgba(255, 255, 255, 0.08);
 }
 
 .faq-question {
@@ -1023,6 +1150,54 @@ section:not(.hero-section) {
 }
 
 /* Responsive Design */
+/* Small desktop and large tablet */
+@media (max-width: 1024px) {
+  .levels-grid {
+    gap: 1.25rem;
+    padding: 0 0.5rem;
+  }
+  
+  .levels-grid .leadership-level-card {
+    min-width: 250px;
+    max-width: 280px;
+  }
+  
+  .leadership-stat-card,
+  .stat-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Medium tablet */
+@media (max-width: 900px) {
+  .levels-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  
+  .levels-grid .leadership-level-card {
+    width: 100%;
+    max-width: 400px;
+    min-width: auto;
+  }
+  
+  .leadership-level-card {
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .level-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .level-percentage {
+    align-self: flex-end;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 1rem;
@@ -1117,10 +1292,41 @@ section:not(.hero-section) {
   }
 
   .balance-cards,
+  .referral-stats-grid,
   .referral-stats,
   .leadership-stats {
     grid-template-columns: 1fr;
-    max-width: 400px;
+    max-width: 100%;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .leadership-stat-card,
+  .stat-card {
+    padding: 1.25rem 1rem;
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .stat-icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+  }
+  
+  .stat-info {
+    flex: 1;
+  }
+  
+  .stat-amount {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+    line-height: 1.3;
   }
   
   .plans-grid {
@@ -1153,8 +1359,141 @@ section:not(.hero-section) {
   }
   
   .levels-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+  
+  .levels-grid .leadership-level-card {
+    width: 100%;
     max-width: 350px;
+    min-width: auto;
+  }
+  
+  .leadership-level-card {
+    padding: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  .level-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .level-name {
+    font-size: 1.2rem;
+  }
+  
+  .level-percentage {
+    font-size: 1.3rem;
+    align-self: flex-end;
+  }
+  
+  .level-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .level-status {
+    font-size: 0.9rem;
+  }
+  
+  .levels-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .leadership-actions {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .withdraw-leadership-btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 1.25rem;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .leadership-stats-section,
+  .leadership-actions-section,
+  .leadership-levels-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .leadership-requirements {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .leadership-container {
+    padding: 1.5rem 0.25rem;
+  }
+  
+  .levels-grid {
+    gap: 0.5rem;
+    padding: 0;
+    align-items: center;
+  }
+  
+  .levels-grid .leadership-level-card {
+    max-width: 320px;
+  }
+  
+  .leadership-level-card {
+    padding: 1rem 0.75rem;
+  }
+  
+  .level-header {
+    gap: 0.4rem;
+  }
+  
+  .level-name {
+    font-size: 1rem;
+  }
+  
+  .level-percentage {
+    font-size: 1.1rem;
+    padding: 0.15rem 0.5rem;
+  }
+  
+  .level-description {
+    font-size: 0.85rem;
+  }
+  
+  .level-status {
+    font-size: 0.85rem;
+  }
+  
+  .requirements-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .requirement-item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+  }
+  
+  .requirement-icon {
+    font-size: 1.25rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+  }
+  
+  .requirement-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 
@@ -1243,15 +1582,7 @@ section:not(.hero-section) {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-}
-
-.social-link:hover {
-  background: rgba(139, 92, 246, 0.2);
-  border-color: rgba(139, 92, 246, 0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
 }
 
 .social-icon {

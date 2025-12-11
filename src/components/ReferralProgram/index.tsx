@@ -13,7 +13,7 @@ const ReferralProgram: React.FC = () => {
   const shareOnSocial = (platform: string) => {
     const text = "Join me on Hexagon for amazing investment returns!";
     const url = referralLink;
-    
+
     let shareUrl = '';
     switch (platform) {
       case 'facebook':
@@ -26,7 +26,7 @@ const ReferralProgram: React.FC = () => {
         shareUrl = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
         break;
     }
-    
+
     window.open(shareUrl, '_blank');
   };
 
@@ -52,105 +52,85 @@ const ReferralProgram: React.FC = () => {
           <h2 className="referral-title">Referral Program</h2>
           <p className="referral-subtitle">Earn commissions from up to levels of referrals</p>
         </div>
-        
+
         <div className="referral-content">
           <div className="referral-section">
             {/* Earnings Stats */}
-            <div className="referral-stats">
-            <div className="stat-card">
-              <div className="stat-icon">💰</div>
-              <div className="stat-info">
-                <h3 className="stat-amount">0.00 USDT</h3>
-                <p className="stat-label">EARNINGS EARNED</p>
+            <div className="referral-stats-grid">
+              <div className="stat-card">
+                <div className="stat-icon">💰</div>
+                <div className="stat-info">
+                  <h3 className="stat-amount">0.00 USDT</h3>
+                  <p className="stat-label">EARNINGS EARNED</p>
+                </div>
               </div>
-            </div>
-            
-            <div className="stat-card">
-              <div className="stat-icon">👥</div>
-              <div className="stat-info">
-                <h3 className="stat-amount">0</h3>
-                <p className="stat-label">CURRENT LEVEL</p>
+
+              <div className="stat-card">
+                <div className="stat-icon">👥</div>
+                <div className="stat-info">
+                  <h3 className="stat-amount">0</h3>
+                  <p className="stat-label">CURRENT LEVEL</p>
+                </div>
               </div>
-            </div>
-            
-            <div className="stat-card">
-              <div className="stat-icon">🎯</div>
-              <div className="stat-info">
-                <h3 className="stat-amount">0</h3>
-                <p className="stat-label">TOTAL REFERRALS</p>
+
+              <div className="stat-card">
+                <div className="stat-icon">🎯</div>
+                <div className="stat-info">
+                  <h3 className="stat-amount">0</h3>
+                  <p className="stat-label">TOTAL REFERRALS</p>
+                </div>
               </div>
-            </div>
             </div>
           </div>
-          
+
           <div className="referral-section">
             {/* Withdraw Button */}
             <div className="referral-actions">
-            <button className="withdraw-btn">
-              💸 Withdraw Referral
-            </button>
+              <button className="withdraw-btn">
+                💸 Withdraw Referral
+              </button>
             </div>
           </div>
-          
+
           <div className="referral-section">
             {/* Referral Link */}
             <div className="referral-link-section">
-            <h3 className="referral-link-title">Your Referral Link</h3>
-            <p className="referral-link-subtitle">Share this link to grow your network</p>
-            
-            <div className="referral-link-container">
-              <input 
-                type="text" 
-                value={referralLink}
-                readOnly
-                className="referral-link-input"
-              />
-              <button 
-                onClick={copyToClipboard}
-                className={`copy-btn ${copied ? 'copied' : ''}`}
-              >
-                {copied ? '✓' : '📋'}
-              </button>
-            </div>
-            
-            {/* Social Share */}
-            <div className="social-share">
-              <button 
-                onClick={() => shareOnSocial('facebook')}
-                className="social-btn facebook"
-              >
-                📘
-              </button>
-              <button 
-                onClick={() => shareOnSocial('twitter')}
-                className="social-btn twitter"
-              >
-                🐦
-              </button>
-              <button 
-                onClick={() => shareOnSocial('telegram')}
-                className="social-btn telegram"
-              >
-                ✈️
-              </button>
-            </div>
+              <h3 className="referral-link-title">Your Referral Link</h3>
+              <p className="referral-link-subtitle">Share this link to grow your network</p>
+
+              <div className="referral-link-container">
+                <input
+                  type="text"
+                  value={referralLink}
+                  readOnly
+                  className="referral-link-input"
+                />
+                <button
+                  onClick={copyToClipboard}
+                  className={`copy-btn ${copied ? 'copied' : ''}`}
+                >
+                  {copied ? '✓' : '📋'}
+                </button>
+              </div>
+
+             
             </div>
           </div>
-          
+
           <div className="referral-section">
             {/* Commission Levels */}
             <div className="commission-levels">
-            <h3 className="commission-title">Commission Structure</h3>
-            <div className="commission-grid">
-              {commissionLevels.map((level, index) => (
-                <div key={index} className="commission-card">
-                  <div className="commission-level">{level.level}</div>
-                  <div className="commission-percentage">{level.percentage}</div>
-                  <div className="commission-label">{level.count}</div>
-                </div>
-              ))}
+              <h3 className="commission-title">Commission Structure</h3>
+              <div className="commission-grid">
+                {commissionLevels.map((level, index) => (
+                  <div key={index} className="commission-card">
+                    <div className="commission-level">{level.level}</div>
+                    <div className="commission-percentage">{level.percentage}</div>
+                    <div className="commission-label">{level.count}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
