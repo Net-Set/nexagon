@@ -7,6 +7,11 @@ interface FAQItem {
 
 const FAQ: React.FC = () => {
   const [openItems, setOpenItems] = useState<number[]>([]);
+  const cardBgColor = import.meta.env.VITE_APP_CARD_BG_COLOR || "";
+  const textColor = import.meta.env.VITE_APP_TEXT_COLOR || "";
+  const mutedTextColor = import.meta.env.VITE_APP_MUTED_TEXT_COLOR || "";
+  
+
 
   const faqData: FAQItem[] = [
     {
@@ -63,22 +68,23 @@ const FAQ: React.FC = () => {
     <section className="faq-section">
       <div className="faq-container">
         <div className="faq-header">
-          <h2 className="faq-title">Frequently Asked Questions</h2>
-          <p className="faq-subtitle">Find Answers to common questions about Hexagon</p>
+          <h2 className="faq-title" style={{color: textColor}}>Frequently Asked Questions</h2>
+          <p className="faq-subtitle" style={{color: mutedTextColor}}>Find Answers to common questions about Hexagon</p>
         </div>
         
         <div className="faq-list">
           {faqData.map((item, index) => (
-            <div key={index} className={`faq-item ${openItems.includes(index) ? 'open' : ''}`}>
+            <div key={index} className={`faq-item ${openItems.includes(index) ? 'open' : ''}`} style={{backgroundColor: cardBgColor}}>
               <button 
-                className="faq-question" 
+                className="faq-question"
+                style={{color: textColor}} 
                 onClick={() => toggleItem(index)}
               >
                 <span>{item.question}</span>
-                <span className="faq-icon">{openItems.includes(index) ? '−' : '+'}</span>
+                <span className="faq-icon" style={{color: textColor}}>{openItems.includes(index) ? '−' : '+'}</span>
               </button>
               {openItems.includes(index) && (
-                <div className="faq-answer">
+                <div className="faq-answer" style={{color: mutedTextColor}}>
                   <p>{item.answer}</p>
                 </div>
               )}

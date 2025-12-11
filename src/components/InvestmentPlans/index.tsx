@@ -12,6 +12,10 @@ interface InvestmentPlan {
 const InvestmentPlans: React.FC = () => {
   const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "";
   const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "";
+  const textColor = import.meta.env.VITE_APP_TEXT_COLOR || "";
+  const mutedTextColor = import.meta.env.VITE_APP_MUTED_TEXT_COLOR || "";
+  const cardBgColor = import.meta.env.VITE_APP_CARD_BG_COLOR || "";
+  const cardSecondBgColor = import.meta.env.VITE_APP_CARD_BG_SECOND_COLOR || "";
   const plans: InvestmentPlan[] = [
     {
       name: "Starter Plan",
@@ -56,26 +60,26 @@ const InvestmentPlans: React.FC = () => {
     <section className="investment-plans-section">
       <div className="plans-container">
         <div className="plans-header">
-          <h2 className="plans-title">DeFi Investment Plans</h2>
-          <p className="plans-subtitle">Maximize your returns with our optimized ROI system and smart contract security</p>
+          <h2 className="plans-title" style={{color: textColor}}>DeFi Investment Plans</h2>
+          <p className="plans-subtitle" style={{color: mutedTextColor}}>Maximize your returns with our optimized ROI system and smart contract security</p>
         </div>
         
         <div className="plans-grid side-by-side">
           {plans.map((plan, index) => (
-            <div key={index} className={`plan-card ${plan.color} ${plan.isPopular ? 'popular' : ''}`}>
+            <div key={index} className={`plan-card`} style={{backgroundColor: cardBgColor}}>
               {plan.isPopular && (
-                <div className="popular-badge">POPULAR</div>
+                <div className="popular-badge" style={{color: textColor}}>POPULAR</div>
               )}
               
               <div className="plan-header">
-                <h3 className="plan-name">{plan.name}</h3>
-                <div className="plan-rate">{plan.rate}</div>
-                <div className="plan-min">{plan.minAmount}</div>
+                <h3 className="plan-name" style={{color: textColor}}>{plan.name}</h3>
+                <div className="plan-rate" style={{color: textColor}}>{plan.rate}</div>
+                <div className="plan-min" style={{color: mutedTextColor}}>{plan.minAmount}</div>
               </div>
               
               <div className="plan-features">
                 {plan.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="plan-feature">
+                  <div key={featureIndex} className="plan-feature" style={{color: textColor}}>
                     <span className="feature-icon">✓</span>
                     <span>{feature}</span>
                   </div>
@@ -83,7 +87,7 @@ const InvestmentPlans: React.FC = () => {
               </div>
               
               <div className="plan-footer">
-                <div className="plan-returns">100% Capital Returns</div>
+                <div className="plan-returns" style={{color: mutedTextColor}}>100% Capital Returns</div>
                 <button className="select-plan-btn" style={{backgroundColor: buttonBgColor, color: buttonTextColor}}>
                   Select Plan
                 </button>

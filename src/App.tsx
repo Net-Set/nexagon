@@ -8,7 +8,7 @@ import LeadershipProgram from './components/LeadershipProgram'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import "bootstrap/dist/css/bootstrap.min.css";
-import './styles.css'
+import './App.css'
 import { Web3ModalProvider } from './providers/web3Provider'
 
 function App() {

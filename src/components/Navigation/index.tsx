@@ -5,9 +5,11 @@ import ConnectButtons from '../walletConnect';
 const Navigation: React.FC = () => {
   const navItems = ['Home', 'Dashboard', 'Invest', 'Referrals', 'Leadership', 'FAQ'];
   const logoUrl = import.meta.env.VITE_APP_LOGO || "";
+  const navBgColor = import.meta.env.VITE_APP_NAV_BG_COLOR || "";
+  const navTextColor = import.meta.env.VITE_APP_NAV_TEXT_COLOR || "";
   
   return (
-    <Navbar expand="lg" className="navbar-dark bg-dark" fixed="top">
+    <Navbar expand="lg" className="navbar-dark" fixed="top" style={{backgroundColor: navBgColor}}>
       <Container>
         <Navbar.Brand href="#home" className="d-flex align-items-center">
           <img 
@@ -26,7 +28,8 @@ const Navigation: React.FC = () => {
               <Nav.Link 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
-                className="text-light mx-2"
+                className=" mx-2"
+                style={{color: navTextColor}}
               >
                 {item}
               </Nav.Link>

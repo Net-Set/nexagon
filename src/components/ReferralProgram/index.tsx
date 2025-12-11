@@ -5,30 +5,14 @@ const ReferralProgram: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "";
   const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "";
+  const textColor = import.meta.env.VITE_APP_TEXT_COLOR || "";
+  const mutedTextColor = import.meta.env.VITE_APP_MUTED_TEXT_COLOR || "";
+  const cardBgColor = import.meta.env.VITE_APP_CARD_BG_COLOR || "";
+  const cardSecondBgColor = import.meta.env.VITE_APP_CARD_BG_SECOND_COLOR || "";
   const copyToClipboard = () => {
     navigator.clipboard.writeText(referralLink);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  const shareOnSocial = (platform: string) => {
-    const text = "Join me on Hexagon for amazing investment returns!";
-    const url = referralLink;
-
-    let shareUrl = '';
-    switch (platform) {
-      case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-        break;
-      case 'twitter':
-        shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
-        break;
-      case 'telegram':
-        shareUrl = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
-        break;
-    }
-
-    window.open(shareUrl, '_blank');
   };
 
   const commissionLevels = [
@@ -50,35 +34,35 @@ const ReferralProgram: React.FC = () => {
     <section className="referral-section">
       <div className="referral-container">
         <div className="referral-header">
-          <h2 className="referral-title">Referral Program</h2>
-          <p className="referral-subtitle">Earn commissions from up to levels of referrals</p>
+          <h2 className="referral-title" style={{color: textColor}}>Referral Program</h2>
+          <p className="referral-subtitle" style={{color: mutedTextColor}}>Earn commissions from up to levels of referrals</p>
         </div>
 
         <div className="referral-content">
           <div className="referral-section">
             {/* Earnings Stats */}
             <div className="referral-stats-grid">
-              <div className="stat-card">
+              <div className="stat-card" style={{backgroundColor: cardBgColor}}>
                 <div className="stat-icon">💰</div>
                 <div className="stat-info">
-                  <h3 className="stat-amount">0.00 USDT</h3>
-                  <p className="stat-label">EARNINGS EARNED</p>
+                  <h3 className="stat-amount" style={{color: textColor}}>0.00 USDT</h3>
+                  <p className="stat-label" style={{color: mutedTextColor}}>EARNINGS EARNED</p>
                 </div>
               </div>
 
-              <div className="stat-card">
+              <div className="stat-card" style={{backgroundColor: cardBgColor}}>
                 <div className="stat-icon">👥</div>
                 <div className="stat-info">
-                  <h3 className="stat-amount">0</h3>
-                  <p className="stat-label">CURRENT LEVEL</p>
+                  <h3 className="stat-amount" style={{color: textColor}}>0</h3>
+                  <p className="stat-label" style={{color: mutedTextColor}}>CURRENT LEVEL</p>
                 </div>
               </div>
 
-              <div className="stat-card">
+              <div className="stat-card" style={{backgroundColor: cardBgColor}}>
                 <div className="stat-icon">🎯</div>
                 <div className="stat-info">
-                  <h3 className="stat-amount">0</h3>
-                  <p className="stat-label">TOTAL REFERRALS</p>
+                  <h3 className="stat-amount" style={{color: textColor}}>0</h3>
+                  <p className="stat-label" style={{color: mutedTextColor}}>TOTAL REFERRALS</p>
                 </div>
               </div>
             </div>
@@ -95,9 +79,9 @@ const ReferralProgram: React.FC = () => {
 
           <div className="referral-section">
             {/* Referral Link */}
-            <div className="referral-link-section">
-              <h3 className="referral-link-title">Your Referral Link</h3>
-              <p className="referral-link-subtitle">Share this link to grow your network</p>
+            <div className="referral-link-section" style={{backgroundColor: cardBgColor}}>
+              <h3 className="referral-link-title" style={{color: textColor}}>Your Referral Link</h3>
+              <p className="referral-link-subtitle" style={{color: mutedTextColor}}>Share this link to grow your network</p>
 
               <div className="referral-link-container">
                 <input
@@ -105,6 +89,7 @@ const ReferralProgram: React.FC = () => {
                   value={referralLink}
                   readOnly
                   className="referral-link-input"
+                  style={{color: textColor, backgroundColor: cardSecondBgColor}}
                 />
                 <button
                   onClick={copyToClipboard}
@@ -121,13 +106,13 @@ const ReferralProgram: React.FC = () => {
           <div className="referral-section">
             {/* Commission Levels */}
             <div className="commission-levels">
-              <h3 className="commission-title">Commission Structure</h3>
+              <h3 className="commission-title" style={{color: textColor}}>Commission Structure</h3>
               <div className="commission-grid">
                 {commissionLevels.map((level, index) => (
-                  <div key={index} className="commission-card">
-                    <div className="commission-level">{level.level}</div>
-                    <div className="commission-percentage">{level.percentage}</div>
-                    <div className="commission-label">{level.count}</div>
+                  <div key={index} className="commission-card" style={{backgroundColor: cardBgColor}}>
+                    <div className="commission-level" style={{color: textColor}}>{level.level}</div>
+                    <div className="commission-percentage" style={{color: textColor}}>{level.percentage}</div>
+                    <div className="commission-label" style={{color: mutedTextColor}}>{level.count}</div>
                   </div>
                 ))}
               </div>
